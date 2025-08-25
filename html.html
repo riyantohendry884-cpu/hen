@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+        min-height: 100vh;
+        overflow-x: hidden;
+        text-align: center;
+        color: #fff;
+      }
+
+      /* Landing Section */
+      .landing {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding: 20px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        padding: 40px 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+      }
+
+      .landing h1 {
+        font-size: 2.5rem;
+        font-family: "Dancing Script", cursive;
+        margin-bottom: 20px;
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff;
+        }
+        to {
+          text-shadow: 0 0 25px #ff85a2;
+        }
+      }
+
+      .btn {
+        margin-top: 20px;
+        padding: 14px 28px;
+        font-size: 1rem;
+        background: #fff;
+        color: #ff4e88;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+      }
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      /* Balloons */
+      .balloon {
+        position: absolute;
+        bottom: -150px;
+        width: 50px;
+        height: 70px;
+        border-radius: 50%;
+        animation: float 10s infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(-110vh) rotate(360deg);
+        }
+      }
+
+      /* Content Section */
+      .content {
+        display: none;
+        padding: 40px 20px;
+        animation: fadeIn 1s forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .content h2 {
+        font-family: "Dancing Script", cursive;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #fff;
+      }
+
+      .message {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+      }
+
+      .grid img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+      }
+
+      .grid img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Music & Back Button */
+      .controls {
+        margin-top: 20px;
+      }
+
+      .back-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #fff;
+        color: #ff4e88;
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s;
+      }
+      .back-btn:hover {
+        transform: scale(1.1);
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .landing h1 {
+          font-size: 2rem;
+        }
+        .grid img {
+          height: 150px;
+        }
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Landing Section -->
+    <div class="landing" id="landing">
+      <div class="card">
+        <h1>Happy Birthday My Love ❤️</h1>
+        <p>
+          Today is your special day, and I just want to say<br />
+          how grateful I am to have you in my life. <br />
+          May your day be filled with joy, laughter, and love 🎂✨
+        </p>
+        <button class="btn" onclick="showContent()">See Your Message” 🎁</button>
+      </div>
+
+      <!-- Balloons -->
+      <div class="balloon" style="left: 10%; background: #ff6f91; animation-duration: 12s"></div>
+      <div class="balloon" style="left: 30%; background: #ffd166; animation-duration: 10s"></div>
+      <div class="balloon" style="left: 50%; background: #06d6a0; animation-duration: 14s"></div>
+      <div class="balloon" style="left: 70%; background: #118ab2; animation-duration: 9s"></div>
+      <div class="balloon" style="left: 85%; background: #ef476f; animation-duration: 11s"></div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content" id="content">
+      <button class="back-btn" onclick="goBack()">⟵</button>
+      <h2>My Special Wish for You 🎉</h2>
+      <div class="message">
+        <p>
+          May this year be filled with new opportunities, growth, and incredible achievements. Every challenge will make you stronger, and every step you take brings you closer to your dreams. Happy Birthday, my love—keep shining and never
+          stop chasing your dreams! ❤️
+        </p>
+      </div>
+      <div class="grid">
+        <img src="ISMA 1.jpg" alt="photo1" />
+        <img src="ISMA 2.jpg" alt="photo2" />
+        <img src="ISMA 3.jpg" alt="photo3" />
+        <img src="ISMA 4.jpg" alt="photo4" />
+      </div>
+      <div class="controls">
+        <button class="btn" onclick="toggleMusic()">🎵 HenMusic</button>
+      </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" src="Ed_Sheeran_-_Perfect_Offblogmedia.com.mp3"></audio>
+    <audio id="bg-music" loop>
+      <source src="Ed_Sheeran_-_Perfect_Offblogmedia.com.mp3" type="audio/mp3" />
+    </audio>
+
+    <script>
+      const music = document.getElementById("bg-music");
+
+      function showContent() {
+        document.getElementById("landing").style.display = "none";
+        const content = document.getElementById("content");
+        content.style.display = "block";
+        music.play();
+      }
+      function playMusic() {
+        let music = document.getElementById("bg-music");
+        music.play();
+      }
+      function toggleMusic() {
+        if (music.paused) {
+          music.play();
+        } else {
+          music.pause();
+        }
+      }
+
+      function goBack() {
+        document.getElementById("content").style.display = "none";
+        document.getElementById("landing").style.display = "flex";
+        music.pause();
+        music.currentTime = 0;
+      }
+    </script>
+  </body>
+</html>
